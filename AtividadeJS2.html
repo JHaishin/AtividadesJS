@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <script>
+        alert("Bem-vindo ao Jogo");
+        let player = prompt("Escolha entre Ímpar ou Par:")
+        let numplayer = Number(prompt("Escolha um número de 1 a 9:"))
+        let ia = Math.floor(Math.random() * (9 - 0 + 1));
+        let result = numplayer + ia
+        if (player == "Ímpar" && result %2 == 0) {
+            alert("Player escolheu: " + numplayer + " e IA escolheu: " + ia)
+            alert("Você perdeu!!!")
+        }
+        else if (player == "Ímpar" && result %2 == 1){
+            alert("Player escolheu: " + numplayer + " e IA escolheu: " + ia)
+            alert ("Você ganhou!!")
+        }
+        else if (player == "Par" && result %2 == 0) {
+            alert("Player escolheu: " + numplayer + " e IA escolheu: " + ia)
+            alert("Você ganhou!!")
+        }
+        else if(player == "Par" && result %2 == 1){
+            alert("Player escolheu: " + numplayer + " e IA escolheu: " + ia)
+            alert("Você perdeu!!")
+        }
+        else {
+            alert ("Digite uma opção válida!!")
+        }
+    </script>
+</body>
+</html>
