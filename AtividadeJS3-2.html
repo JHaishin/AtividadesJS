@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+    <style>
+     main {
+        display:list-item;
+        
+     }
+
+     main p #numerogerado1{
+        border: 5px black;
+     }
+
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo(a) ao simulador de dados!!!</h1> <br>
+    <div class="image">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIWAWT6JRPDB4Cs0bOxg7PW-155OtLS0CoG3momb84v9TwFi5dnwufW4j1spoA95RKLF_bPyqVFaMDnSl-ooMpG02cc17FlyB6Gtve6lU-fdX_dQBU6PqNKaTtgrdTmeVmtbIxwKzLlKm4/s1600/Gifs+animados+Dado+2.gif" alt="" srcset="" width="200px">
+    </div>
+    <main>
+        <p>Dado 1</p>
+        <button onclick="GerarNumeroAleatorio()">Gerar Resultado</button>
+        <p id="numerogerado1"></p>
+
+        <script>
+            function GerarNumeroAleatorio() {
+                let numeroaleatorio = Math.floor(Math.random() * 6) + 1;
+                document.getElementById("numerogerado1").innerHTML = numeroaleatorio
+            }
+
+            </script>
+            <br>
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIWAWT6JRPDB4Cs0bOxg7PW-155OtLS0CoG3momb84v9TwFi5dnwufW4j1spoA95RKLF_bPyqVFaMDnSl-ooMpG02cc17FlyB6Gtve6lU-fdX_dQBU6PqNKaTtgrdTmeVmtbIxwKzLlKm4/s1600/Gifs+animados+Dado+2.gif" alt="" srcset="" width="200px">
+
+        <p>Dado 2</p>
+        <button onclick="GerarNumeroAleatorio2()">Gerar Resultado</button>
+        <p id="numerogerado2"></p>
+
+            <script>
+
+            function GerarNumeroAleatorio2() {
+            let numeroaleatorio2 = Math.floor(Math.random() * 8) + 1;
+            document.getElementById("numerogerado2").innerHTML = numeroaleatorio2
+        }
+            </script>
+
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIWAWT6JRPDB4Cs0bOxg7PW-155OtLS0CoG3momb84v9TwFi5dnwufW4j1spoA95RKLF_bPyqVFaMDnSl-ooMpG02cc17FlyB6Gtve6lU-fdX_dQBU6PqNKaTtgrdTmeVmtbIxwKzLlKm4/s1600/Gifs+animados+Dado+2.gif" alt="" srcset="" width="200px">
+
+    <p>Dado 3</p>
+        <button onclick="GerarNumeroAleatorio3()">Gerar Resultado</button>
+        <p id="numerogerado3"></p>
+
+    <script>
+
+    function GerarNumeroAleatorio3() {
+    let numeroaleatorio3 = Math.floor(Math.random() * 20) + 1;
+    document.getElementById("numerogerado3").innerHTML = numeroaleatorio3
+}
+    </script>
+
+    </main>
+
+    
+           
+</body>
+</html>
