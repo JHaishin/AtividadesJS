@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo da Forca</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="container-forca">
+    <h1>Jogo da Forca</h1>
+    <div id="container-palavra">
+        <!-- A palavra oculta será gerada aqui -->
+    </div>
+    <br>
+    <div id="container-tentativa">
+        <label for="input-letra">Digite uma letra:</label>
+        <input type="text" id="input-letra" maxlength="1">
+        <button onclick="verificarLetra()">Verificar</button>
+    </div>
+    <div id="container-feedback">
+        <!-- Feedback de letras corretas/incorretas será mostrado aqui -->
+    </div>
+    <br>
+    <div id="tentativas-restantes">
+        <!-- Número de tentativas restantes será mostrado aqui -->
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

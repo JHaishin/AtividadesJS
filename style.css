@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#container-forca {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+#container-palavra {
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+#container-tentativa {
+    margin-bottom: 20px;
+}
+
+#container-tentativa label {
+    font-size: 18px;
+}
+
+#input-letra {
+    width: 30px;
+    font-size: 18px;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+button {
+    font-size: 18px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+#container-feedback {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#tentativas-restantes {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}

@@ -1,19 +1,66 @@
-function converterMaiusculas() {
-    const palavra = document.getElementById('palavra').value.toUpperCase();
-    const resultado = document.getElementById('resultado');
-    resultado.innerHTML = ''; // Limpa o resultado anterior
+const palavras = ["javascript", "html", "css", "python", "java"];
+let palavraEscolhida = "";
+let palavraAdivinhada = [];
+let tentativasRestantes = 6;
 
-    for (let i = 0; i < palavra.length; i++) {
-        const letra = palavra.charAt(i);
-        resultado.innerHTML += `${letra}<br>`;
+function iniciarJogo() {
+    tentativasRestantes = 6;
+    palavraEscolhida = palavras[Math.floor(Math.random() * palavras.length)];
+    palavraAdivinhada = Array(palavraEscolhida.length).fill('_');
+    atualizarInterface();
+}
+
+function atualizarInterface() {
+    let containerPalavra = document.getElementById('container-palavra');
+    containerPalavra.innerHTML = '';
+    palavraAdivinhada.forEach(letra => {
+        let span = document.createElement('span');
+        span.textContent = letra + ' ';
+        containerPalavra.appendChild(span);
+    });
+
+    let containerTentativas = document.getElementById('tentativas-restantes');
+    containerTentativas.textContent = `Tentativas ${tentativasRestantes}`;
+
+
+    let containerFeedback = document.getElementById('container-feedback');
+    containerFeedback.textContent = '';
+}
+
+function verificarLetra() {
+    let inputLetra = document.getElementById('input-letra');
+    let letra = inputLetra.value.toLowerCase();
+    inputLetra.value = '';
+
+    if (letra.length !== 1 || !letra.match(/[a-z]/i)) {
+        alert('Por favor, digite uma única letra válida.');
+        return;
+    }
+
+    if (palavraEscolhida.includes(letra)) {
+        for (let i = 0; i < palavraEscolhida.length; i++) {
+            if (palavraEscolhida[i] === letra) {
+                palavraAdivinhada[i] = letra;
+            }
+        }
+    } else {
+        tentativasRestantes--;
+    }
+
+    atualizarInterface();
+    verificarFimJogo();
+}
+
+function verificarFimJogo() {
+    if (palavraAdivinhada.join('') === palavraEscolhida) {
+        alert('Parabéns! Você ganhou!');
+        iniciarJogo();
+    } else if (tentativasRestantes === 0) {
+        alert(`Game Over! A palavra era: ${palavraEscolhida}`);
+
+        iniciarJogo();
     }
 }
 
-/*O HTML cria um campo de entrada (input) para o usuário digitar a palavra e um botão para acionar a conversão.
-O JavaScript define a função converterMaiusculas() que:
-Obtém a palavra do campo de entrada e a converte para maiúsculas usando toUpperCase().
-Obtém o elemento div com id "resultado" para exibir a palavra convertida.
-Usa um loop for para:
-Obter cada letra da palavra usando charAt().
-Criar um elemento <br> para quebrar a linha após cada letra.
-Adicionar a letra maiúscula e a quebra de linha ao elemento "resultado". */
+// Iniciar o jogo quando a página carregar
+document.addEventListener('DOMContentLoaded', iniciarJogo);
